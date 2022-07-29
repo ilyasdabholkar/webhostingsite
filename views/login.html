@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="Stylesheet" href="../public/stylesheets/navbar.css" />
+    <link rel="Stylesheet" href="../public/stylesheets/login.css" />
+    <title>About</title>
+  </head>
+  <body>
+    <header>
+      <!--NAVBAR-->
+      <section class="navbar">
+        <span class="nav-title">Hosting Website</span>
+        <div class="nav-links">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="./about.html" class="nav-item">About</a>
+          <a href="./contact.html" class="nav-item">Contact</a>
+          <a href="./login.html" class="nav-item active">Login</a>
+        </div>
+      </section>
+    </header>
+    <div class="login-container">
+      <section id="login-img-container">
+        <img src="../public/images/undraw_secure_login_pdn4.png" />
+      </section>
+      <section id="login-form-container">
+        <h1 class="login-heading">Login</h1>
+        <form
+          action="../index.html"
+          onsubmit="return submitLogin()"
+          id="login-form"
+          novalidate
+        >
+          <input
+            type="email"
+            placeholder="abc@xyz.com"
+            onblur="validateEmail()"
+            id="email"
+            name="email"
+          />
+          <small class="error" id="emailError"></small>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            onblur="validatePassword()"
+            id="pass"
+            name="pass"
+          />
+          <small class="error" id="passError"></small>
+          <input type="submit" value="Login" class="login-button" />
+        </form>
+      </section>
+    </div>
+
+    <script>
+      const emailInput = document.querySelector("#email");
+      const passInput = document.querySelector("#pass");
+      const emailError = document.querySelector("#emailError");
+      const passError = document.querySelector("#passError");
+
+      const validatePassword = () => {
+        let regx = new RegExp(
+          "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,12}$"
+        );
+
+        passError.innerText = "";
+        if (passInput.value.trim() == "") {
+          passError.innerText = "Password is required";
+          return false;
+        } else if (passInput.value.length < 6) {
+          passError.innerText = "password too small ";
+          return false;
+        } else if (regx.test(passInput.value) == false) {
+          passError.innerText = "Please use a strong password ";
+          return false;
+        } else {
+          passError.innerText = "";
+          return true;
+        }
+      };
+
+      const validateEmail = () => {
+        emailError.innerText = "";
+        if (emailInput.value.trim() === "") {
+          emailError.innerText = "Email is required";
+          return false;
+        } else if (
+          !emailInput.value.includes("@") ||
+          emailInput.value.endsWith("@")
+        ) {
+          emailError.innerText = "Please enter valid email";
+          return false;
+        } else {
+          emailError.innerText = "";
+          return true;
+        }
+      };
+
+      const submitLogin = () => {
+        return validateEmail() && validatePassword();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.about-container {
+  width: 75%;
+  height: 85%;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 2%;
+}
+
+#about-img {
+  margin-top: 2, 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  float: left;
+  border-radius: 50%;
+}
+
+#about-heading {
+  text-align: center;
+  padding: 2%;
+  font-size: 2.6rem;
+  color: #2f4ace;
+}
+
+.about-text {
+  word-spacing: 1px;
+  line-height: 1.5;
+}
+
+.pricing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.pricing-heading {
+  font-size: 2.3rem;
+  color: #2f4ace;
+  padding: 2%;
+}
+
+.pricing-title {
+  font-style: italic;
+}
+
+.cards-container {
+  padding-top: 4%;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  height: 100%;
+  width: 80%;
+}
+
+.adv-card {
+  height: 80%;
+  color: #b9c2f0;
+  max-width: 25%;
+  padding: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #2f4ace;
+  font-size: 2.6rem;
+  border-radius: 6px;
+}
+
+.adv-text:hover{
+  color : #fff;
+}
+
+.price-card {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  min-width: 20%;
+  max-width: 20%;
+  height: 80%;
+  background-color: #f2f3f5;
+  border-radius: 6px;
+  transition: ease;
+} 
+
+.price-card:hover {
+  background-color: #b9c2f0;
+  transform: scale(1.125);
+  font-weight: bold;
+}
+
+.price-plan {
+  font-size: 2rem;
+  text-align: center;
+  color: rgb(89, 85, 85);
+}
+
+.price-amt {
+  text-align: center;
+  font-size: 4.55rem;
+  font-weight: bold;
+  color: #2f4ace;
+}
+
+.feature-list {
+  list-style-type: none;
+  font-size: 17px;
+  text-align: center;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.buy-btn {
+  width: 60%;
+  height: 35px;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: rgb(163, 161, 161);
+}
+
+.buy-btn:hover {
+  color: #fff;
+  background-color: #2f4ace;
+}
+
+.best-card {
+  background-color: #2f4ace;
+  color: #b9c2f0;
+}
+
+#accordian-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#accordian-container {
+  margin : 4%;
+  width: 75%;
+  height: 75%;
+  background-color: #b9c2f0;
+}
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.accordion-arrow-icon{
+  position: absolute;
+  left : 82%;
+}
+
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  font-size: 1.3rem;
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+
+footer {
+    margin-top: 5%;
+    background-color: #1b1919;
+    color: #fff;
+    padding: 6%;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .about-container{
+      overflow-y: scroll;
+    }
+
+    .pricing-section{
+      display: none;
+    }
+
+  }
